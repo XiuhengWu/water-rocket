@@ -18,6 +18,29 @@ In diesem Artikel wird ein mathematisches Modell für den Flug einer Wasserraket
 
 [TOC]
 
+*Dieses Dokument, alle Simulationsskripte und die verwendeten Bilder sind online unter https://github.com/XiuhengWu/water-rocket verfügbar.*
+*Zukünftige Änderungen werden ebenfalls unter dieser Adresse veröffentlicht.*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # I. Mathematisches Modell
 
 ## 1. Grundidee
@@ -259,16 +282,46 @@ $$
 
 ## 5. Abweichungen von der Realität
 
-| **Bereich**     | **Abweichung**                                               | **Konsequenz**                                  |
-| --------------- | ------------------------------------------------------------ | ----------------------------------------------- |
-| **Schub**       | Formel $F_{\text{Schub}}(t) = A_{\text{Düse}} \cdot 2 \cdot [P(t) - P_{\text{Atm}}] \cdot C_d$ für kompressible Luft ungenau | Schub ungenau                                   |
-|                 | Düseneffizienz schwer bestimmbar, aktueller Wert nur geschätzt | Massenstrom ungenau                             |
-| **Masse**       | Luftmasse nicht berücksichtigt                               | Masse unterschätzt → Beschleunigung überschätzt |
-| **Temperatur**  | Konstante Lufttemperatur $T_{\text{Luft}}$ angenommen        | Druckabfall zu langsam modelliert               |
-|                 | Wärmetransport zur Raketenwand vernachlässigt                | Innentemperatur zu niedrig simuliert            |
-| **Integration** | Verwendung des Euler-Verfahrens                              | Fehler bei Positionsberechnung                  |
-| **Strömung**    | Wind und Turbulenzen nicht berücksichtigt → Flugbahn ist eine senkrechte Linie nach oben. | Flugbahn ungenau simuliert                      |
-| **Mechanik**    | Reibung in der Startdüse ignoriert                           | Startgeschwindigkeit zu hoch simuliert          |
+| **Bereich**       | **Abweichung**                                               | **Konsequenz**                                  |
+| ----------------- | ------------------------------------------------------------ | ----------------------------------------------- |
+| **Schub**         | Formel $F_{\text{Schub}}(t) = A_{\text{Düse}} \cdot 2 \cdot [P(t) - P_{\text{Atm}}] \cdot C_d$ für kompressible Luft ungenau | Schub ungenau                                   |
+| **Schub** \*      | Düseneffizienz schwer bestimmbar, aktueller Wert nur geschätzt | Massenstrom ungenau                             |
+| **Masse**         | Luftmasse nicht berücksichtigt                               | Masse unterschätzt → Beschleunigung überschätzt |
+| **Temperatur**    | Konstante Lufttemperatur $T_{\text{Luft}}$ angenommen        | Druckabfall zu langsam modelliert               |
+| **Temperatur** \* | Wärmetransport zur Raketenwand vernachlässigt                | Innentemperatur zu niedrig simuliert            |
+| **Integration**   | Verwendung des Euler-Verfahrens                              | Fehler bei Positionsberechnung                  |
+| **Strömung**      | Wind und Turbulenzen nicht berücksichtigt → Flugbahn ist eine senkrechte Linie nach oben. | Flugbahn ungenau simuliert                      |
+| **Mechanik**      | Reibung in der Startdüse ignoriert                           | Startgeschwindigkeit zu hoch simuliert          |
+
+\*: Zukünftige Ziele
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # II. Computer-Simulation
 
@@ -417,11 +470,11 @@ Wir testen Düsendurchmesser zwischen **10 mm** und **80 mm**. Die Höhe-Kurve h
 
 **Bei niedrigem Druck (z.B. 4 bar)**
 
-<img src="assets/Figure_1-1749658649153-5.png" style="zoom:50%;" />
+<img src="assets/Figure_1-1749658649153-5.png" style="zoom:33%;margin-left:0" />
 
 **Bei höherem Druck (z.B. 8 bar)**
 
-<img src="assets/Figure_2.png" style="zoom:50%;" />
+<img src="assets/Figure_2.png" style="zoom:33%; margin-left:0" />
 
 #### 2.3.1 Kleiner Durchmesser (z.B. 10 mm)
 
